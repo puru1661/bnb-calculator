@@ -22,7 +22,7 @@ with col1:
     st.image("bnb.png",width=100)
 
 with col2:
-    st.title(":blue[Airbnb Calculator for Dubai]")
+    st.title("Airbnb Calculator for Dubai")
 
 
 if 'beds' not in st.session_state:
@@ -157,7 +157,7 @@ if submit_button:
 
 
 if st.session_state.vals >0:
-    st.title(':blue[Performance Overview]')
+    st.title('Performance Overview')
    
     col1, col2, col3 = st.columns(3)
     performance_containers = {
@@ -204,7 +204,7 @@ if st.session_state.vals >0:
         # """)
 
 
-    # st.title(':blue[Predicted Revenue based on Occupancy]')
+    # st.title('Predicted Revenue based on Occupancy]')
     # value = st.slider(
     # 'Select Occupancy',  # Title of the slider
     # min_value=0,      # Starting value of the slider
@@ -223,11 +223,11 @@ if st.session_state.vals >0:
 
 
     #df['capacity'] = df['capacity'].astype(int)
-    st.title(':blue[Rental Data from PropertyFinder/Bayut]')
+    st.title('Rental Data from PropertyFinder/Bayut')
     st.write("Average Rental ask rate for {} Bed Apartment in {} is **AED {}**".format(beds,option,np.round(st.session_state.rental['price'].mean(),0)))
     fig = px.histogram(st.session_state.rental, x="price",nbins=20)
 
-    st.header(":blue[Distribution of Rental Ask rates]")
+    st.header("Distribution of Rental Ask rates")
     # Display the figure in Streamlit
     st.markdown("The below chart shows distribution of what landlords are asking. Each column shows the range of rent and number of properties in that range")
     st.plotly_chart(fig)
@@ -235,23 +235,23 @@ if st.session_state.vals >0:
 else:
     st.markdown("## Data not available for the Building/Area")
 
-footer = """
-<style>
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: transparent;
-    color: gray;
-    text-align: center;
-    padding: 10px;
-    font-size: 16px;
-}
-</style>
-<div class="footer">
-    <p>Made with ❤️ by <a href="https://yourwebsite.com" target="_blank">Purushottam Deshpande</a></p>
-</div>
-"""
+# footer = """
+# <style>
+# .footer {
+#     position: fixed;
+#     left: 0;
+#     bottom: 0;
+#     width: 100%;
+#     background-color: transparent;
+#     color: gray;
+#     text-align: center;
+#     padding: 10px;
+#     font-size: 16px;
+# }
+# </style>
+# <div class="footer">
+#     <p>Made with ❤️ by <a href="https://yourwebsite.com" target="_blank">Purushottam Deshpande</a></p>
+# </div>
+# """
 
-st.markdown(footer, unsafe_allow_html=True)
+# st.markdown(footer, unsafe_allow_html=True)
